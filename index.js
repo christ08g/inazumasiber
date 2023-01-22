@@ -5,8 +5,13 @@ const passport = require("passport");
 const flash = require("express-flash");
 const session = require("express-session");
 const path = require('path');
+
+const cookieParser = require('cookie-parser');
+const cookieSession = require('cookie-session');
+
 require("dotenv").config();
 const app = express();
+app.use(cookieParser('secret'));
 const PORT = process.env.PORT || 5734;
 
 const initializePassport = require("./passportConfig");
