@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="electro.png" type="image/png">
+    <title>Inazuma</title>
+  </head>
+  <style>
+    .container {
+        text-align:center;
+    }
+</style>
+  <body>  
+    <img src="electro.png">
+    <h1 class="divTitle">INAZUMA</h1>
+    <div class="container">
+    <div class="login">
+      <h1 class="">LOGIN</h1>
+    
+    
+      <% if (typeof errors != 'undefined') { %> <% errors.forEach(error => { %>
+      <h6 id="error_msg"><%= error.message %></h6>
+      <% }) %> <% } %>
+    
+
+    
+      <% if(messages.success_msg) { %>
+      <h6 id="error_msg"><%= messages.success_msg %></h6>
+      <% } %>
+   
+
+    
+      <% if (messages.error) { %>
+      <h6 id="error_msg"><%= messages.error %></h6>
+      <% } %>
+    
+
+    <form action="/" method="POST">
+      
+      <div>
+        <input
+          type="text"
+          id="username"
+          name="username"
+          placeholder="Username"
+          required
+        />
+      </div>
+      <div>
+        <input
+          type="password"
+          id="password"
+          name="password"
+          placeholder="Password"
+          required
+        />
+      </div>
+      <div>
+        <input type="submit" value="Login" />
+      </div>
+    </div>
+    </form>
+  </div>
+  <audio loop autoplay>
+    <source src="Inazuma OST Battle Theme.mp3" type="audio/mp3"></audio>
+  </body>
+</html>

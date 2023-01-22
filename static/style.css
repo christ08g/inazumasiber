@@ -1,0 +1,104 @@
+* {
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "segoe ui", roboto, oxygen, ubuntu, cantarell, "fira sans", "droid sans", "helvetica neue", Arial, sans-serif;
+    font-size: 16px;
+}
+body{
+    background-color: rgb(208, 208, 208);
+}
+body img{
+    width: 180px;
+    height: 180px;
+    transform: translate(-50%, 4%);
+    position: relative;
+    left: 50%;
+}
+#error_msg {
+    text-align: center;
+    color: #eb4034;
+}
+
+#group_name {
+    color: #ffffff;
+    text-align: center;
+    font-size: 36px;
+    padding: 20px 0 20px 0;
+}
+
+.login {
+    border-radius: 20px;
+    width: 370px;
+    height: 250px;
+    background-color: #ffffff;
+    box-shadow: 0 0 9px 0 rgba(0, 0, 0, 0.3);
+    margin: 10px auto;
+}
+body .divTitle {
+    text-align:center;
+    font-size: 45px;
+    font-weight: bold;
+    color: blueviolet;
+    background: linear-gradient(90deg,blueviolet,transparent);
+            -webkit-background-clip: text;
+            background-size: 1000%;
+            transform-origin: left;
+            color: transparent;
+            animation: inazuma 2s linear infinite;
+          }
+          @keyframes inazuma{
+            0%{
+              background-position: 100% 0%;
+            }
+            50%{
+              background-position: 0% 100%;
+            }
+            100%{
+              background-position: 100% 0%;
+            }
+          }
+.login h1 {
+    font-size: 35px;
+    text-align: center;
+    color: blueviolet;
+}
+.login form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.login form label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    background-color: #3274d6;
+    color: #ffffff;
+}
+
+.login form input[type="password"], .login form input[type="text"] {
+    width: 250px;
+    height: 35px;
+    border: 1px solid #dee0e4;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-bottom: 15px;
+    padding: 0 15px;
+}
+.login form input[type="submit"] {
+    padding: 5px 50px;
+    border-radius: 25px;
+    margin: auto 145px;
+    margin-top: 10px;
+    border: none;
+    cursor: pointer;
+    font-size: 20px;
+    font-weight: bold;
+    color: snow;
+    background-color: plum;
+    
+}
+.login form input[type="submit"]:hover {
+  background-color: #8d1881;
+    transition: background-color 0.2s;
+}

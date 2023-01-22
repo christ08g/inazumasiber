@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <link rel="shortcut icon" href="electro.png" type="image/png">
+      <title>Welcome</title>
+        <style>
+          body{
+            background-image: url("./Tenshukaku.jpg");
+            background-attachment: fixed;
+            background-position: center;
+            background-size: cover;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 20vh;
+          }
+          h1{
+            font-size: 40px;
+            letter-spacing: 5px;
+            background: linear-gradient(90deg, white,rgb(144, 144, 255),rgb(111, 59, 255),rgb(36, 13, 249));
+            -webkit-background-clip: text;
+            background-size: 1000%;
+            transform-origin: left;
+            color: transparent;
+            animation: successfull 10s linear infinite;
+          }
+          @keyframes successfull{
+            0%{
+              background-position: 100% 0%;
+            }
+            50%{
+              background-position: 0% 100%;
+            }
+            100%{
+              background-position: 100% 0%;
+            }
+          }
+          h2{
+            font-size: 20px;
+            text-align: center;
+            background: linear-gradient(90deg, white,transparent);
+            -webkit-background-clip: text;
+            background-size: 1000%;
+            transform-origin: right;
+            color: transparent;
+            animation: inazuma 2s linear infinite;
+          }
+          @keyframes inazuma{
+            0%{
+              background-position: 100% 0%;
+            }
+            50%{
+              background-position: 0% 100%;
+            }
+            100%{
+              background-position: 100% 0%;
+            }
+          }
+          audio{
+            margin:auto 38%;
+          }
+         </style>
+        </head>
+<body>
+<div>
+  <h1>SUCCESSFULL</h1>
+  <h2>WELCOME TO INAZUMA</h2>
+</div>
+<audio loop autoplay>
+  <source src="Inazuma.mp3" type="audio/mp3"></audio>
+</body>
+</html>
