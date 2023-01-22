@@ -56,6 +56,9 @@ app.get("/gud/success", checkNotAuthenticated, (req, res) => {
   res.render("gud", { user: req.user.username });
 });
 
+app.get("/users/register", checkAuthenticated, (req, res) => {
+  res.render("register.ejs");
+});
 
 app.get("/gud/logout", (req, res,next) => {
   //req.logout();
