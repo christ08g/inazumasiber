@@ -81,6 +81,63 @@ app.get("/gud/logout", (req, res,next) => {
   });
 });
 
+app.post("/users/register", async (req, res) => {
+  let { username, password } = req.body;
+
+  let errors = [];
+
+  console.log({
+    username,
+    password
+  });
+
+ // if (!username || !password) {
+   // errors.push({ message: "Please enter all fields" });
+ // }
+
+ // if (password.length < 6) {
+   // errors.push({ message: "Password must be a least 6 characters long" });
+ // }
+
+  //if (errors.length > 0) {
+   // res.render("register", { error,username, password });
+ // } else {
+   // hashedPassword = await bcrypt.hash(password, 10);
+   // console.log(hashedPassword);
+    // Validation passed
+    pool.query(
+      `SELECT * FROM login
+        WHERE username = $1`,
+      [username],
+      (err, results) => {
+        if (err) {
+          console.log(err);
+        }
+        console.log(results.rows);
+
+        if (results.rows.length > 0) {
+          return res.render("register", {
+            message: "Email already registered"
+          });
+        } else {
+          pool.query(
+            `INSERT INTO login (username, password)
+                VALUES ($1, $2)
+                RETURNING username,  password`,
+            [username, password],
+            (err, results) => {
+              if (err) {
+                throw err;
+              }
+              console.log(results.rows);
+              req.flash("success_msg", "You are now registered. Please log in");
+              res.redirect("/");
+            }
+          );
+        }
+      }
+    );
+  });
 
 app.post(
   "/",
