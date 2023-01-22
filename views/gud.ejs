@@ -65,6 +65,47 @@
 <div>
   <h1>SUCCESSFULL</h1>
   <h2>WELCOME TO INAZUMA</h2>
+  
+  <button class="geeks" type="button" onclick="getlocation();"> Current Position </button>
+
+<div id="demo2"
+	style="width: 500px; height: 500px; transform: translate(-50%, 4%);
+    position: relative;
+    left: 50%;" ></div>
+</div>
+<script src=
+"https://maps.google.com/maps/api/js?sensor=false/">
+</script>
+<script type="text/javascript">
+	function getlocation(){
+	if (navigator.geolocation) {
+		navigator.geolocation.getCurrentPosition(showloc);
+	}
+	}
+	function showloc(pos){
+        latt = pos.coords.latitude;
+        long = pos.coords.longitude;
+	var lattlong = new google.maps.LatLng(latt, long);
+	var OPTions = {
+		center: lattlong,
+		zoom: 10,
+		mapTypeControl: true,
+		navigationControlOptions: {
+		style: google.maps.NavigationControlStyle.SMALL,
+		},
+	};
+	var mapg = new google.maps.Map(
+		document.getElementById("demo2"),
+		OPTions
+	);
+	var markerg = new google.maps.Marker({
+		position: lattlong,
+		map: mapg,
+		title: "You are here!",
+	});
+	}
+</script>
+  
 </div>
 <audio loop autoplay>
   <source src="Inazuma.mp3" type="audio/mp3"></audio>
