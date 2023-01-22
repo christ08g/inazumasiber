@@ -52,14 +52,14 @@ function initialize(passport) {
     )
   );
 
-  passport.serializeUser((user, done) => done(null, user.id));
+  passport.serializeUser((user, done) => done(null, user.username));
 
-  passport.deserializeUser((id, done) => {
-    pool.query(`SELECT * FROM accounts WHERE id = $1`, [id], (err, results) => {
+  passport.deserializeUser((username, done) => {
+    pool.query(`SELECT * FROM accounts WHERE username = $1`, [username], (err, results) => {
       if (err) {
         return done(err);
       }
-      console.log(`ID is ${results.rows[0].id}`);
+      console.log(`Username is ${results.rows[0].username}`);
       return done(null, results.rows[0]);
     });
   });
