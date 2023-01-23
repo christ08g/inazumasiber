@@ -116,7 +116,7 @@ app.post("/users/register", async (req, res) => {
 
         if (results.rows.length > 0) {
           return res.render("register", {
-            message: "Email already registered"
+            message: "Username already registered"
           });
         } else {
           pool.query(
