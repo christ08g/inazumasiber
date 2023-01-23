@@ -89,7 +89,7 @@
         latt = pos.coords.latitude;
         long = pos.coords.longitude;
 	var lattlong = new google.maps.LatLng(latt, long);
-	var OPTions = {
+	var options = {
 		center: lattlong,
 		zoom: 10,
 		mapTypeControl: true,
@@ -99,7 +99,7 @@
 	};
 	var mapg = new google.maps.Map(
 		document.getElementById("demo2"),
-		OPTions
+		options
 	);
 	var markerg = new google.maps.Marker({
 		position: lattlong,
